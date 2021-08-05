@@ -2,6 +2,12 @@
 
 A python little package for creating a schedule of my weekly classes from a JSON file using matplotlib.
 
+Install it from the [python package index](https://pypi.org/project/week-schedule/):
+
+```bash
+pip install week_schedule
+```
+
 ## How it works
 
 Save your classes in a `.json` file with the structure:
@@ -62,13 +68,16 @@ Like everything in JSON you separate your things with commas. Here is an example
 	"Shitpost masterclass with reddit entrepreneur":{
 		"MW":"11-12:30"
 	},
+	"frog and toad shenaniganry II":{
+		"TR":"10-11:45"
+	},
 	"childhood traumas with 4chan experts":{
 		"TWRF":"13-15"
 	}
 }
 ```
 
-You can found it in `/tests/test.json`. Then you go to python
+You can found it in `./tests/test.json`. Then you go to python
 
 ```python
 >>> from week_schedule import schedule_figure
@@ -84,6 +93,7 @@ which results in
 You can pass parameters to control various visual styles:
 
 * `schedule_path`: path of the `.json` file
+* `day_names`: ordered names of the weekdays. Defaults are `"MTWRFS"`
 * `font_dict`: additional font tweaks; the same keyword arguments accepted by [matplotlib.pyplot.text](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html). Defaults used by this function are:
 	* fontweight: bold
 	* horizontalalignment: center
@@ -93,7 +103,7 @@ You can pass parameters to control various visual styles:
 * `text_stroke` outward black stroke for better reading of the text on all background colors. Default is `True`
 * `major_minor_intervals`: interval of major and minor ticks, in hours. Defaults are 1 hour for major ticks and 15 minutes (1/4 hour) for minor ticks. Major tickss interval must be an integer number of hours, else a `ValueError` is raised.
 * `cmap_name`: color palette to use on the subject backgrounds. Default is `"plasma"`. Options are in the matplotlib docs for [colormap reference](https://matplotlib.org/stable/gallery/color/colormap_reference.html).
-* `cmap_range`: min and max output rango of the colormap. In other words, portion of the colors to use. Default is `(0,0.9)`, almost the full range of colors (`(0,1)`).
+* `cmap_range`: min and max output range of the colormap. In other words, portion of the colors to use. Default is `(0,0.9)`, almost the full range of colors (`(0,1)`).
 
 
 ## TODOs

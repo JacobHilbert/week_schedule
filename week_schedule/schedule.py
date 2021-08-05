@@ -152,3 +152,35 @@ def schedule_figure(
 	plt.subplots_adjust(wspace=0.03)
 	
 	return fig
+	
+schedule_figure.__doc__ = """generates a matplotlib figure with the given schedule filename
+
+	schedule_path:str
+		location of the .json schedule file
+		
+	day_names:str = "MTWRFS"
+		ordered names of the weekdays
+	
+	font_dict:dict = {}
+		additional font tweaks; the same kargs of matplotlib.pyplot.text
+		(https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html)
+		See source or README for defaults. You cannot control the stroke here.
+	
+	text_stroke:bool = True
+		outward black stroke for better legibility of the text
+	
+	major_minor_intervals:tuple = (1,1/4),
+		interval of major and minor ticks, in hours. 
+		Major tickss interval must be an integer number of hours, else a ValueError is raised.
+	
+	cmap_name:str = "plasma"
+		color palette to use on the subject backgrounds. 
+		See the matplotlib colormap reference for a list of names
+		(https://matplotlib.org/stable/gallery/color/colormap_reference.html)
+	
+	cmap_range:tuple = (0,0.9)
+		min and max output range of the colormap. 
+		In other words, portion of the colors to use.
+		Full range is (0,1).
+		
+"""
