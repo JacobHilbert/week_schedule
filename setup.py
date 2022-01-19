@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
 	name="week_schedule",
-	version="2.1",
+	version="2.2",
 	author="Jacob Hilbert",
 	author_email="jacob.hilbert.tree@gmail.com",
 	description="Create schedule images of your weekly classes",
