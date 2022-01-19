@@ -105,7 +105,7 @@ def schedule_figure(
 			plt.sca(axes_by_day[day])
 			plt.fill_between([0,1],[start,start],[end,end],color=cmap(norm(i)))
 			
-			subject_wrapped = "\n".join(textwrap.wrap(subject,14))
+			subject_wrapped = "\n".join(textwrap.wrap(subject,14,replace_whitespace=False))
 			text = plt.text(0.5,(start+end)/2,subject_wrapped,**font_dict)
 			if text_stroke:
 				text.set_path_effects([path_effects.Stroke(linewidth=1, foreground='black'),path_effects.Normal()])
